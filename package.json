@@ -1,5 +1,5 @@
 {
-  "homepage": "https://asiaahmadali.github.io/recipe-finder-app",
+  
   "name": "myapp",
   "private": false,
   "version": "0.0.0",
@@ -9,8 +9,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist"
+   
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
