@@ -4,12 +4,11 @@ import { useParams } from "react-router-dom";
 function ItemRecipeInfo() {
   const { MealId } = useParams();
   const [itemInfo, setitemInfo] = useState();
+  const baseUrl1 = import.meta.env.VITE_API_BASE_URL1;
 
   useEffect(() => {
     if (MealId !== "") {
-      const fetchdata = fetch(
-        `https:/www.themealdb.com/api/json/v1/1/lookup.php?i=${MealId}`
-      );
+      const fetchdata = fetch(`${baseUrl1}lookup.php?i=${MealId}`);
       fetchdata.then((response) => {
         const jsondata = response.json();
         jsondata.then((data) => {
@@ -18,7 +17,7 @@ function ItemRecipeInfo() {
         });
       });
     }
-  }, [MealId]);
+  }, [MealId, baseUrl1]);
 
   let instructions = "";
   if (itemInfo) {

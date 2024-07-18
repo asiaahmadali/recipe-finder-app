@@ -3,10 +3,8 @@ import MealIndex from "./mealindex";
 import { useState, useEffect } from "react";
 
 function Meal() {
-  const [url, setURL] = useState(
-    "https:/www.themealdb.com/api/json/v1/1/search.php?f=a"
-  );
-
+  const baseUrl1 = import.meta.env.VITE_API_BASE_URL1;
+  const [url, setURL] = useState(`${baseUrl1}search.php?f=a`);
   const [items, setitems] = useState();
   const [search, setsearch] = useState("");
   const [showitems, setshowitems] = useState(false);
@@ -17,7 +15,6 @@ function Meal() {
     fetchdata.then((response) => {
       const jsondata = response.json();
       jsondata.then((data) => {
-        // console.log(data.meals);
         setitems(data.meals);
         setshowitems(true);
       });
@@ -26,13 +23,13 @@ function Meal() {
 
   // seturl function
   const setindexURL = (alphabet) => {
-    setURL(`https:/www.themealdb.com/api/json/v1/1/search.php?f=${alphabet}`);
+    setURL(`${baseUrl1}search.php?f=${alphabet}`);
   };
 
   // search recipe function
   const searchRecipe = (e) => {
     if (e.key === "Enter") {
-      setURL(`https:/www.themealdb.com/api/json/v1/1/search.php?s=${search}`);
+      setURL(`${baseUrl1}search.php?s=${search}`);
     }
   };
 
