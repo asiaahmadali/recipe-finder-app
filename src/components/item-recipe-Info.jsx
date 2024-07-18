@@ -3,20 +3,23 @@ import { useParams } from "react-router-dom";
 
 function ItemRecipeInfo() {
   const { MealId } = useParams();
-  const [itemInfo, setitemInfo] = useState();
+  const [itemInfo, setItemInfo] = useState();
   const baseUrl1 = import.meta.env.VITE_API_BASE_URL1;
 
   useEffect(() => {
-    if (MealId !== "") {
-      const fetchdata = fetch(`${baseUrl1}lookup.php?i=${MealId}`);
-      fetchdata.then((response) => {
-        const jsondata = response.json();
-        jsondata.then((data) => {
-          setitemInfo(data.meals[0]);
-          console.log(data.meals[0]);
-        });
-      });
-    }
+    const fetchData = async () => {
+      if (MealId !== "") {
+        try {
+          const response = await fetch(`${baseUrl1}lookup.php?i=${MealId}`);
+          const jsonData = await response.json();
+          setItemInfo(jsonData.meals[0]);
+          console.log(jsonData.meals[0]);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      }
+    };
+    fetchData();
   }, [MealId, baseUrl1]);
 
   let instructions = "";
@@ -26,7 +29,6 @@ function ItemRecipeInfo() {
     var videoId = str[str.length - 1];
     instructions = itemInfo.strInstructions.split(" ").slice(0, 150).join(" ");
   }
-
   return (
     <div className="bg-gradient-to-r from-purple-400 to-pink-400 min-h-screen p-2 md:p-6 flex justify-center items-center">
       {!itemInfo ? (
