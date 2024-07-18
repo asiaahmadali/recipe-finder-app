@@ -38,7 +38,7 @@ function Meal() {
       <div className="bg-gradient-to-r from-purple-600 to-purple-400 min-h-screen p-6">
         <div className="text-center mb-8">
           <h1 className="text-2xl md:text-4xl font-bold text-white mb-4">
-            Search Your Food Recipe here
+            Search Your Food Recipe
           </h1>
           <p className="text-purple-200">
             Find delicious recipes with ease. Enter a keyword or browse by
