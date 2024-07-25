@@ -1,7 +1,7 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 function MealItem(Props) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <>
       {!Props.data ? (
@@ -13,7 +13,7 @@ function MealItem(Props) {
               <div key={item.idMeal} className="p-4">
                 <div
                   className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden group"
-                  onClick={() => navigate(`/${item.idMeal}`)}
+                  // onClick={() => navigate(`/${item.idMeal}`)}
                 >
                   <img
                     src={item.strMealThumb}
