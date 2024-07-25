@@ -14,7 +14,7 @@
   "dev": "vite",
   
     
-  "build": "echo VITE_API_BASE_URL1: $VITE_API_BASE_URL1 && vite build",
+  "build": "vite build",
   
     
   "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
