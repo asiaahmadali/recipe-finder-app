@@ -1,5 +1,5 @@
-import MealItem from "./mealitem";
-import MealIndex from "./mealindex";
+import MealItem from "./MealItem";
+import MealIndex from "./MealIndex";
 import { useState, useEffect } from "react";
 
 function Meal() {

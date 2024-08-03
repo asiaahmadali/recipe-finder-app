@@ -1,5 +1,5 @@
-import Meal from "./components/meal";
-import ItemRecipeInfo from "./components/item-recipe-Info";
+import Meal from "./components/Meal";
+import ItemRecipeInfo from "./components/Item-Recipe-Info";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
